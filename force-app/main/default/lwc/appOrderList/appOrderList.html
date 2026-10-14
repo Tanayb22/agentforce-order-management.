@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="App Orders Management" icon-name="standard:orders">
+        <div class="slds-m-around_medium">
+            <template if:true={orders.data}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={orders.data}
+                    columns={columns}
+                    hide-checkbox-column>
+                </lightning-datatable>
+            </template>
+            <template if:true={orders.error}>
+                <p class="slds-text-color_error">Error loading order records.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
